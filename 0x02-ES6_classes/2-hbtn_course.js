@@ -1,25 +1,26 @@
+/* eslint-disable no-underscore-dangle */
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    // Type checks for the constructor parameters
+    // Verify types
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a string');
     }
     if (typeof length !== 'number') {
       throw new TypeError('Length must be a number');
     }
-    if (!Array.isArray(students) || !students.every(student => typeof student === 'string')) {
+    if (!Array.isArray(students) || !students.every((student) => typeof student === 'string')) {
       throw new TypeError('Students must be an array of strings');
     }
 
-    // Assign values to attributes
-    this._name = name;       // Keep the underscore as per your original design
-    this._length = length;   // Same for length
-    this._students = students; // Same for students
+    // Initialize attributes
+    this._name = name;
+    this._length = length;
+    this._students = students;
   }
 
   // Getter for name
   get name() {
-    return this._name;  // Access the underscore attribute
+    return this._name;
   }
 
   // Setter for name
@@ -27,12 +28,12 @@ export default class HolbertonCourse {
     if (typeof value !== 'string') {
       throw new TypeError('Name must be a string');
     }
-    this._name = value; // Assign to the underscore attribute
+    this._name = value;
   }
 
   // Getter for length
   get length() {
-    return this._length; // Access the underscore attribute
+    return this._length;
   }
 
   // Setter for length
@@ -40,19 +41,20 @@ export default class HolbertonCourse {
     if (typeof value !== 'number') {
       throw new TypeError('Length must be a number');
     }
-    this._length = value; // Assign to the underscore attribute
+    this._length = value;
   }
 
   // Getter for students
   get students() {
-    return this._students; // Access the underscore attribute
+    return this._students;
   }
 
   // Setter for students
   set students(value) {
-    if (!Array.isArray(value) || !value.every(student => typeof student === 'string')) {
+    if (!Array.isArray(value) || !value.every((student) => typeof student === 'string')) {
       throw new TypeError('Students must be an array of strings');
     }
-    this._students = value; // Assign to the underscore attribute
+    this._students = value;
   }
 }
+/* eslint-enable no-underscore-dangle */
