@@ -1,15 +1,5 @@
-function getResponseFromAPI() {
-  return new Promise((resolve, reject) => {
-    const success = true;
-
-    if (success) {
-      resolve('Done');
-    } else {
-      reject(console.error('failed'));
-    }
+export default function getResponseFromAPI() {
+  return new Promise((resolve) => {
+    resolve('API call successful');
   });
 }
-
-getResponseFromAPI()
-  .then((response) => console.log(response))
-  .catch((error) => console.error(error));
