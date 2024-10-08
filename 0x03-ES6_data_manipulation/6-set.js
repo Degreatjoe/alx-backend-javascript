@@ -1,3 +1,4 @@
 export default function setFromArray(arr) {
-  return new Set([arr]);
+  const narr = new Set(arr);
+  return narr;
 }
