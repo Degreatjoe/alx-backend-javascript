@@ -1,6 +1,7 @@
 export default function hasValuesFromArray(aset, arr) {
-  for (let i = 0; i < aset.length; i + 1) {
-    if (aset.has(arr[i])) return true;
+  if (arr in aset) {
+    return true;
   }
+
   return false;
 }
