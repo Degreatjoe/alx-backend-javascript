@@ -1,32 +1,26 @@
-/* eslint-disable no-underscore-dangle */
 export default class Airport {
   constructor(name, code) {
-    // Verify types
-    if (typeof name !== 'string') {
-      throw new TypeError('Name must be a string');
-    }
-    if (typeof code !== 'string') {
-      throw new TypeError('Code must be a string');
-    }
-
-    // Initialize attributes
     this._name = name;
     this._code = code;
   }
 
-  // Getter for name
   get name() {
     return this._name;
   }
 
-  // Getter for code
+  set name(value) {
+    this._name = value;
+  }
+
   get code() {
     return this._code;
   }
 
-  // Default string description of the class
+  set code(value) {
+    this._code = value;
+  }
+
   toString() {
-    return this._code;
+    return `[object ${this.code}]`;
   }
 }
-/* eslint-enable no-underscore-dangle */

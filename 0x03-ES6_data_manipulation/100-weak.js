@@ -1,16 +1,9 @@
-// Create and export a WeakMap instance
 export const weakMap = new WeakMap();
 
-// Function to track and limit queries
+// https://stackoverflow.com/questions/29413222/what-are-the-actual-uses-of-es6-weakmap
 export function queryAPI(endpoint) {
-  // Check if the endpoint exists in the weakMap
-  const queryCount = weakMap.get(endpoint) || 0;
-
-  // If query count reaches 5 or more, throw an error
-  if (queryCount >= 5) {
-    throw new Error('Endpoint load is high');
-  }
-
-  // Otherwise, increase the count by 1 and update the weakMap
-  weakMap.set(endpoint, queryCount + 1);
+  let called = 0;
+  if (weakMap.get(endpoint)) called = weakMap.get(endpoint);
+  weakMap.set(endpoint, called + 1);
+  if (called + 1 >= 5) throw new Error('Endpoint load is high');
 }

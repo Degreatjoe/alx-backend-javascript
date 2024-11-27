@@ -1,1 +1,1 @@
-# 0x02 ES6_CLASS
+# Solutions to ES6 classes

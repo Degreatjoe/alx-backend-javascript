@@ -1,1 +1,0 @@
-pascal's triangle

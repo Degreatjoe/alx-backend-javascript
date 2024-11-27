@@ -1,1 +1,1 @@
-# ES6 arrays
+# Solutions to tasks on ES6 data manipulation

@@ -1,12 +1,10 @@
-export default function cleanSet(set, startString) {
-  if (!startString || typeof startString !== 'string') {
+/* eslint-disable array-callback-return */
+export default function cleanSet(set, string) {
+  if (string === undefined || string.length === 0) {
     return '';
   }
-
-  const result = [...set]
-    .filter((value) => value.startsWith(startString))
-    .map((value) => value.slice(startString.length))
+  return [...set]
+    .filter((str) => (str !== undefined ? str.startsWith(string) : ''))
+    .map((str) => (str !== undefined ? str.slice(string.length) : ''))
     .join('-');
-
-  return result;
 }
